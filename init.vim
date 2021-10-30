@@ -22,18 +22,18 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 call plug#begin(stdpath('data') . '/plugged')
-" Plug 'kyazdani/nvim-web-devicons'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Plug 'nvim-lua/plenary.vim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'gruvbox-community/gruvbox'
-" Plug 'neovim/nvim-lspconfig'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'gruvbox-community/gruvbox'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 colorscheme gruvbox
 
 let mapleader = " "
-" nnoremap <leader>ff <cmd>Telescope find_files<cr
+
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
