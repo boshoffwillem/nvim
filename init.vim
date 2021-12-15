@@ -134,7 +134,6 @@ lua <<EOF
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   require('lspconfig')['yamlls'].setup {
-      cmd = { "~/AppData/Local/nvim-data/lsp_servers/yaml/node_modules/.bin/yaml-langauge-server", "--stdio" },
     on_attach=on_attach,
     capabilities = capabilities,
     settings = {
