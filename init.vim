@@ -145,7 +145,8 @@ lua <<EOF
         }
     }
   }
-  require('lspconfig')['powershell_es'].setup {
+  require('lspconfig')['dockerls'].setup {
+    on_attach=on_attach,
     capabilities = capabilities
   }
 EOF
