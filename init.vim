@@ -77,7 +77,7 @@ nnoremap <leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>lu <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <leader>lg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>li <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>lq <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>lh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>lQ <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>lf <cmd>lua vim.lsp.buf.formatting()<CR>
 nnoremap <C-j> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
