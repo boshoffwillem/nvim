@@ -46,10 +46,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
-
-" For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 call plug#end()
 
 colorscheme gruvbox
@@ -67,21 +65,25 @@ augroup WB
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+" buffer navigation
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <leader>b <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
+" code navigation and actions
 nnoremap <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>lu <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <leader>lg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>li <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>lh <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>lQ <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>lf <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <C-j> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <C-k> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>lg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>lh <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>li <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>lQ <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>lr <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>lu <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <leader>da <cmd>Telescope diagnostics<CR>
+nnoremap <leader>dk <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <leader>dj <cmd>lua vim.diagnostic.goto_next()<CR>
 
 set completeopt=menu,menuone,noselect
 
@@ -90,12 +92,8 @@ lua <<EOF
   local cmp = require'cmp'
   cmp.setup({
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       end,
     },
     mapping = {
@@ -113,31 +111,12 @@ lua <<EOF
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
+      { name = 'luasnip' }, -- For luasnip users.
     }, {
       { name = 'buffer' },
     })
   })
 
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-
-  })
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   local pid = vim.fn.getpid()
