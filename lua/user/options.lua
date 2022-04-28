@@ -35,7 +35,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "FantasqueSansMono Nerd Font:h17"
+vim.opt.guifont = "FantasqueSansMono Nerd Font:h11"
 vim.opt.shortmess:append "c"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
