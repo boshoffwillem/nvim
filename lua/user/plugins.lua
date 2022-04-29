@@ -47,11 +47,14 @@ return packer.startup(function(use)
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
   use "gruvbox-community/gruvbox"
   use 'navarasu/onedark.nvim'
-  use 'doums/darcula' 
+  use 'doums/darcula'
   use "windwp/nvim-autopairs"
-  -- use "numToStr/Comment.nvim"
+  use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+  use "akinsho/toggleterm.nvim"
+  use "ahmedkhalf/project.nvim"
+  use "folke/which-key.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
