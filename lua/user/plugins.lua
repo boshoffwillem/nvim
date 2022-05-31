@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use "gruvbox-community/gruvbox"
   use 'navarasu/onedark.nvim'
   use 'doums/darcula'
+  use 'Mofiqul/vscode.nvim'  
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-web-devicons'
