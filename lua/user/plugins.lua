@@ -48,7 +48,7 @@ return packer.startup(function(use)
   use "gruvbox-community/gruvbox"
   use 'navarasu/onedark.nvim'
   use 'doums/darcula'
-  use 'Mofiqul/vscode.nvim'  
+  use 'Mofiqul/vscode.nvim'
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-web-devicons'
@@ -56,6 +56,10 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "folke/which-key.nvim"
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
