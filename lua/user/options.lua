@@ -4,6 +4,7 @@ vim.opt.cmdheight = 2
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
+vim.opt.foldmethod = "indent"
 vim.opt.hlsearch = false
 vim.opt.errorbells = false
 vim.opt.ignorecase = true
