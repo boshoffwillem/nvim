@@ -5,6 +5,17 @@ end
 
 require "user.lsp.null-ls"
 
+require("nvim-lsp-installer").setup({
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
+
 local function setup()
   local signs = {
     { name = "DiagnosticSignError", text = "" },
@@ -285,6 +296,7 @@ require('lspconfig')['yamlls'].setup {
                 ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
                 ["http://json.schemastore.org/kustomization"] = "kustomization.yaml",
                 ["https://raw.githubusercontent.com/GoogleContainerTools/skaffold/master/docs/content/en/schemas/v2beta8.json"] = "skaffold.yaml",
+                ["https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json"] = "**/azure-pipelines.yml",
                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
             }
         }

@@ -8,7 +8,7 @@ require "user.treesitter"
 -- require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
--- vim.cmd "colorscheme gruvbox"
+vim.cmd "colorscheme gruvbox"
 -- vim.cmd "colorscheme onedark"
 -- vim.cmd "colorscheme darcula"
 require "user.nvim-tree"
@@ -26,4 +26,4 @@ vim.g.vscode_transparent = 1
 vim.g.vscode_italic_comment = 1
 -- Disable nvim-tree background color
 vim.g.vscode_disable_nvimtree_bg = true
-vim.cmd([[colorscheme vscode]])
+-- vim.cmd([[colorscheme vscode]])
