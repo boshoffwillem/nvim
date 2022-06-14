@@ -109,6 +109,7 @@ keymap("t", "<C-q>", "<C-\\><C-N><C-w>q", term_opts)
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
 keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 -- refactoring
 --keymap("n", "<leader>lrf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 --keymap("n", "<leader>lrr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
