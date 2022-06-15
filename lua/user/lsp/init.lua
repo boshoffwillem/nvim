@@ -63,8 +63,32 @@ setup()
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local lsp_on_attach = function(client)
+    -- signature/documentation
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+    -- goto
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 })
+    -- code actions
+    vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { buffer = 0 })
+    -- diagnostics
+    vim.keymap.set("n", "<leader>ldb", require'telescope.builtin'.diagnostics, { buffer = 0 })
+    vim.keymap.set("n", "<leader>ldj", vim.lsp.diagnostic.goto_next, { buffer = 0 })
+    vim.keymap.set("n", "<leader>ldk", vim.lsp.diagnostic.goto_prev, { buffer = 0 })
+    vim.keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, { buffer = 0 })
+    vim.keymap.set("n", "<leader>ldq", vim.lsp.diagnostic.set_loclist, { buffer = 0 })
+    -- refactoring
+    vim.keymap.set("n", "<leader>lrf", vim.lsp.buf.formatting, { buffer = 0 })
+    vim.keymap.set("n", "<leader>lrr", vim.lsp.buf.rename, { buffer = 0 })
+    -- searching
+    vim.keymap.set("n", "<leader>lsb", require'telescope.builtin'.lsp_document_symbols, { buffer = 0 })
+    vim.keymap.set("n", "<leader>lsw", require'telescope.builtin'.lsp_dynamic_workspace_symbols, { buffer = 0 })
+end
+
 require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_on_attach
 }
 
 -- Find more schemas here: https://www.schemastore.org/json/
@@ -233,6 +257,7 @@ local schemas = {
 }
 require('lspconfig')['jsonls'].setup {
     capabilities = capabilities,
+    on_attach = lsp_on_attach,
     settings = {
         json = {
             schemas = schemas,
@@ -252,11 +277,13 @@ require('lspconfig')['jsonls'].setup {
 local pid = vim.fn.getpid()
 require('lspconfig')['omnisharp'].setup {
     capabilities = capabilities,
+    on_attach = lsp_on_attach,
     cmd = { 'OmniSharp', '--languageserver', '--hostPID', tostring(pid) }
 }
 
 require('lspconfig')['pyright'].setup {
     capabilities = capabilities,
+    on_attach = lsp_on_attach,
     settings = {
         python = {
             analysis = {
@@ -267,11 +294,13 @@ require('lspconfig')['pyright'].setup {
 }
 
 require('lspconfig')['rust_analyzer'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_on_attach
 }
 
 require('lspconfig')['sumneko_lua'].setup {
     capabilities = capabilities,
+    on_attach = lsp_on_attach,
     settings = {
         Lua = {
             diagnostics = {
@@ -289,6 +318,7 @@ require('lspconfig')['sumneko_lua'].setup {
 
 require('lspconfig')['yamlls'].setup {
     capabilities = capabilities,
+    on_attach = lsp_on_attach,
     settings = {
         yaml = {
             schemas = {

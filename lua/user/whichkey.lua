@@ -127,46 +127,6 @@ local mappings = {
         "Diff",
       },
     },
-    l = {
-        name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        d = {
-          name = "diagnostics",
-          b = {
-            "<cmd>Telescope lsp_document_diagnostics<cr>",
-            "buffer diagnostics" },
-          j = {
-            "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-            "next diagnostic",
-          },
-          k = {
-            "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-            "prev diagnostic",
-          },
-          q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "quickfix" },
-          h = { "<cmd>lua vim.diagnostic.open_float()<cr>", "show" },
-          w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-            "workspace diagnostics",
-          },
-        },
-        --d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definitions" },
-        --i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementations" },
-        --u = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
-        r = {
-            name = "refactoring",
-            f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
-            r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        },
-        s = {
-          name = "searching",
-          f = { "<cmd>Telescope lsp_document_symbols<cr>", "buffer symbols" },
-          p = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-            "workspace symbols",
-          }
-        }
-    },
     s = {
       name = "Search",
       h = { "<cmd>Telescope help_tags<cr>", "find help" },

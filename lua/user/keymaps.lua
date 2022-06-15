@@ -89,33 +89,9 @@ keymap("t", "<C-q>", "<C-\\><C-N><C-w>q", term_opts)
 -- keymap("n", "<leader>bk", ":bdelete<CR>", opts)
 -- keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
 -- keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
---keymap("n", "<leader>fw", ":Telescope live_grep<cr>", opts)
---keymap("n", "<leader>gc", ":Telescope git_commits<cr>", opts)
---keymap("n", "<leader>pp", ":Telescope projects<cr>", opts)
--- =========================================================================================================
-
--- LSP
--- =========================================================================================================
--- code actions
---keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
--- diagnostics
---keymap("n", "<leader>ldb", "<cmd>Telescope lsp_document_diagnostics<cr>", opts)
---keymap("n", "<leader>ldw", "<cmd>Telescope lsp_workspace_diagnostics<cr>", opts)
---keymap("n", "<leader>ldj", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
---keymap("n", "<leader>ldk", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
---keymap("n", "<leader>ldh", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
---keymap("n", "<leader>ldq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", opts)
--- goto
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
--- refactoring
---keymap("n", "<leader>lrf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
---keymap("n", "<leader>lrr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
--- searching
---keymap("n", "<leader>lsb", "<cmd>Telescope lsp_document_symbols<cr>", opts)
---keymap("n", "<leader>lsw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
+-- keymap("n", "<leader>fw", ":Telescope live_grep<cr>", opts)
+-- keymap("n", "<leader>gc", ":Telescope git_commits<cr>", opts)
+-- keymap("n", "<leader>pp", ":Telescope projects<cr>", opts)
 -- =========================================================================================================
 
 -- File Explorer
