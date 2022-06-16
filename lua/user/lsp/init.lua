@@ -49,11 +49,9 @@ local function setup()
   }
 
   vim.diagnostic.config(config)
-
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "rounded",
   })
-
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
@@ -272,6 +270,11 @@ require('lspconfig')['jsonls'].setup {
             },
         },
     },
+}
+
+require('lspconfig')['marksman'].setup {
+    capabilities = capabilities,
+    on_attach = lsp_on_attach
 }
 
 local pid = vim.fn.getpid()
