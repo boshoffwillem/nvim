@@ -87,13 +87,28 @@ telescope.setup {
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
     find_files = {
-        theme = "dropdown"
+        theme = "ivy"
     },
     buffers = {
-        theme = "dropdown"
+        theme = "ivy"
+    },
+    git_branches = {
+        theme = "ivy"
     },
     git_commits = {
-        theme = "dropdown"
+        theme = "ivy"
+    },
+    git_status = {
+        theme = "ivy"
+    },
+    live_grep = {
+        theme = "ivy"
+    },
+    oldfiles = {
+        theme = "ivy"
+    },
+    projects = {
+        theme = "ivy"
     }
   },
   extensions = {

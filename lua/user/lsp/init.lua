@@ -77,11 +77,11 @@ local lsp_on_attach = function(client)
     vim.keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, { buffer = 0 })
     vim.keymap.set("n", "<leader>ldq", vim.lsp.diagnostic.set_loclist, { buffer = 0 })
     -- refactoring
-    vim.keymap.set("n", "<leader>lrf", vim.lsp.buf.formatting, { buffer = 0 })
+    vim.keymap.set("n", "<C-A-\\>", vim.lsp.buf.formatting, { buffer = 0 })
     vim.keymap.set("n", "<leader>lrr", vim.lsp.buf.rename, { buffer = 0 })
     -- searching
-    vim.keymap.set("n", "<leader>lsb", require'telescope.builtin'.lsp_document_symbols, { buffer = 0 })
-    vim.keymap.set("n", "<leader>lsw", require'telescope.builtin'.lsp_dynamic_workspace_symbols, { buffer = 0 })
+    vim.keymap.set("n", "gsb", require'telescope.builtin'.lsp_document_symbols, { buffer = 0 })
+    vim.keymap.set("n", "gsw", require'telescope.builtin'.lsp_dynamic_workspace_symbols, { buffer = 0 })
 end
 
 require('lspconfig')['clangd'].setup {

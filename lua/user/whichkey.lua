@@ -95,7 +95,9 @@ local mappings = {
             "<cmd>Telescope find_files<cr>",
             "find files"
         },
+        p = { "<cmd>Telescope projects<cr>", "find project" },
         r = { "<cmd>Telescope oldfiles<cr>", "recent files" },
+        w = { "<cmd>Telescope live_grep<cr>", "find in workspace" },
     },
     P = {
         name = "Packer",
@@ -134,7 +136,6 @@ local mappings = {
       R = { "<cmd>Telescope registers<cr>", "registers" },
       k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
       C = { "<cmd>Telescope commands<cr>", "commands" },
-      p = { "<cmd>Telescope live_grep<cr>", "find in project" },
     },
     t = {
       name = "Terminal",

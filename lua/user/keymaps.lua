@@ -83,17 +83,6 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("t", "<C-q>", "<C-\\><C-N><C-w>q", term_opts)
 -- =========================================================================================================
 
--- Telescope
--- =========================================================================================================
--- keymap("n", "<leader>bb", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
--- keymap("n", "<leader>bk", ":bdelete<CR>", opts)
--- keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
--- keymap("n", "<leader>fr", ":Telescope oldfiles<cr>", opts)
--- keymap("n", "<leader>fw", ":Telescope live_grep<cr>", opts)
--- keymap("n", "<leader>gc", ":Telescope git_commits<cr>", opts)
--- keymap("n", "<leader>pp", ":Telescope projects<cr>", opts)
--- =========================================================================================================
-
 -- File Explorer
 -- =========================================================================================================
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
