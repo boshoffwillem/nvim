@@ -15,6 +15,7 @@ require "user.nvim-tree"
 require "user.toggleterm"
 require "user.project"
 require "user.whichkey"
+require "user.luasnip"
 
 -- For dark theme
 vim.g.vscode_style = "dark"
