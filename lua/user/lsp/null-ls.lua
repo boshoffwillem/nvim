@@ -19,8 +19,6 @@ null_ls.setup {
     formatting.stylua,
     -- diagnostics.flake8,
     diagnostics.cspell.with { filetypes = { "markdown", "text" } }, -- npm install -g cspell
-    diagnostics.markdownlint,
-    -- diagnostics.codespell, -- npm install -g codespell
-    -- code_actions.proselint, -- pip install proselint
+    diagnostics.markdownlint, -- npm install -g markdownlint
   },
 }

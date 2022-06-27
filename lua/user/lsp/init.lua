@@ -84,6 +84,11 @@ local lsp_on_attach = function(client)
     vim.keymap.set("n", "gsw", require'telescope.builtin'.lsp_dynamic_workspace_symbols, { buffer = 0 })
 end
 
+require('lspconfig')['bashls'].setup {
+    capabilities = capabilities,
+    on_attach = lsp_on_attach
+}
+
 require('lspconfig')['clangd'].setup {
     capabilities = capabilities,
     on_attach = lsp_on_attach
