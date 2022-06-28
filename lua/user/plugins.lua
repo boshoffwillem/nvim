@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use 'navarasu/onedark.nvim'
   use 'doums/darcula'
   use 'Mofiqul/vscode.nvim'
+  use 'Soares/base16.nvim'
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-web-devicons'
