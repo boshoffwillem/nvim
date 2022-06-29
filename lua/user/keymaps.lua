@@ -22,10 +22,10 @@ vim.g.maplocalleader = " "
 -- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Remap h,j,k,l to be on the home row: j, k, l, ;
-keymap("n", "j", "h", opts)
-keymap("n", "k", "j", opts)
-keymap("n", "l", "k", opts)
-keymap("n", ";", "l", opts)
+-- keymap("n", "j", "h", opts)
+-- keymap("n", "k", "j", opts)
+-- keymap("n", "l", "k", opts)
+-- keymap("n", ";", "l", opts)
 
 -- Yank rest of line
 -- =========================================================================================================
@@ -61,10 +61,11 @@ keymap("i", "<A-k>", ":m .-2<CR>==gi", opts)
 
 -- Visual Mode
 -- Remap h,j,k,l to be on the home row: j, k, l, ;
-keymap("v", "j", "h", opts)
-keymap("v", "k", "j", opts)
-keymap("v", "l", "k", opts)
-keymap("v", ";", "l", opts)
+-- keymap("v", "j", "h", opts)
+-- keymap("v", "k", "j", opts)
+-- keymap("v", "l", "k", opts)
+-- keymap("v", ";", "l", opts)
+
 -- =========================================================================================================
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

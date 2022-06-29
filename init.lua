@@ -1,3 +1,7 @@
+DEBUG = function(object)
+    print(vim.inspect(object))
+end
+
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
@@ -27,8 +31,8 @@ vim.g.vscode_transparent = 1
 vim.g.vscode_italic_comment = 1
 -- Disable nvim-tree background color
 vim.g.vscode_disable_nvimtree_bg = true
--- vim.cmd([[colorscheme vscode]])
+vim.cmd([[colorscheme vscode]])
 
-vim.opt.background = "dark"
-vim.opt.termguicolors = true
-vim.cmd([[colorscheme tomorrow]])
+-- vim.opt.background = "dark"
+-- vim.opt.termguicolors = true
+-- vim.cmd([[colorscheme tomorrow]])
