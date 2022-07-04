@@ -8,6 +8,7 @@ local servers = {
     "bashls",
     "clangd",
     "jsonls",
+    "lemminx",
     "marksman",
     "omnisharp",
     "rust_analyzer",
