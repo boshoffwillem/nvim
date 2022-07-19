@@ -82,6 +82,11 @@ return packer.startup(function(use)
   use "simrat39/rust-tools.nvim"
   use "mfussenegger/nvim-dap"
   use "RRethy/vim-illuminate"
+  use "b0o/schemastore.nvim"
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

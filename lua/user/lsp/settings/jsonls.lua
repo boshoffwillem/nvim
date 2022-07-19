@@ -1,7 +1,8 @@
 return {
     settings = {
         json = {
-            schemas = require("user.lsp.settings.json_schemas").schemas
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true }
         },
     },
     setup = {
